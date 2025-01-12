@@ -1,3 +1,3 @@
 Download Files
 Unzip Files
-Click Launcher shortcut
+click index.html to launch
