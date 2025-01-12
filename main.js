@@ -22,7 +22,7 @@ function openMap(evt, MapName) {
     evt.currentTarget.className += " active";
   }
 
-  let LFdata = ["XM4", "AK-47", "AMES", "GPR91", "Model L", "Goblin MK2", "AS VAL", "Krig", "C9", "KSV", "Tanto .22", "PP-919", "Jakal", "Kompakt", "Saug", "Siren", "Marine", "ASG 89", "PU-21", "XMG", "GPMG", "LW3A1 Frostline", "SVD", "LR 7.62", "9mm PM", "GS45", "Stryder", "Grekhova", "HE-1", "Cigma", "Ray Gun", "Jet Gun", "Mutant Injection", "Chopper gunner", "ARC-XD", "Hellstorm", "Combat knife", "Bat", "Power drill"]
+  let LFdata = ["AEK", "Swat 5.56", "Tsarkov", "DM-10", "XM4", "AK-47", "AMES", "GPR91", "Model L", "Goblin MK2", "AS VAL", "Krig", "C9", "KSV", "Tanto .22", "PP-919", "Jakal", "Kompakt", "Saug", "Siren", "Marine", "ASG 89", "PU-21", "XMG", "GPMG", "LW3A1 Frostline", "SVD", "LR 7.62", "9mm PM", "GS45", "Stryder", "Grekhova", "HE-1", "Cigma", "Ray Gun", "Jet Gun", "Mutant Injection", "Chopper gunner", "ARC-XD", "Hellstorm", "Combat knife", "Bat", "Power drill"]
   let List1 = document.getElementById("LFList")
 
   LFdata.forEach((item) => {
@@ -30,13 +30,14 @@ function openMap(evt, MapName) {
 
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
-    checkbox.id = item;
+    checkbox.id = "l" + item;
     checkbox.name = item;
     li.appendChild(checkbox);
+    li.onclick = updateProgressBar(LFdata, "LFbar");
 
     // Create the label
     const label = document.createElement("label");
-    label.htmlFor = item;
+    label.htmlFor = "l" + item;
     label.textContent = item;
     li.appendChild(label);
 
@@ -45,7 +46,7 @@ function openMap(evt, MapName) {
 
 
 
-  let Tdata = ["XM4", "AK-47", "AMES", "GPR91", "Model L", "Goblin MK2", "AS VAL", "Krig", "C9", "KSV", "Tanto .22", "PP-919", "Jakal", "Kompakt", "Saug", "Siren", "Marine", "ASG 89", "PU-21", "XMG", "GPMG", "LW3A1 Frostline", "SVD", "LR 7.62", "9mm PM", "GS45", "Stryder", "Grekhova", "HE-1", "Cigma", "Ray Gun", "Beam Smasher", "Mutant Injection", "Chopper gunner", "ARC-XD", "Hellstorm", "Combat knife", "Bat", "Power drill"]
+  let Tdata = ["AEK", "Swat 5.56", "Tsarkov", "DM-10", "XM4", "AK-47", "AMES", "GPR91", "Model L", "Goblin MK2", "AS VAL", "Krig", "C9", "KSV", "Tanto .22", "PP-919", "Jakal", "Kompakt", "Saug", "Siren", "Marine", "ASG 89", "PU-21", "XMG", "GPMG", "LW3A1 Frostline", "SVD", "LR 7.62", "9mm PM", "GS45", "Stryder", "Grekhova", "HE-1", "Cigma", "Ray Gun", "Beam Smasher", "Mutant Injection", "Chopper gunner", "ARC-XD", "Hellstorm", "Combat knife", "Bat", "Power drill"]
   let List2 = document.getElementById("TList")
 
   Tdata.forEach((item) => {
@@ -53,13 +54,14 @@ function openMap(evt, MapName) {
 
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
-    checkbox.id = item;
+    checkbox.id = "t" + item;
     checkbox.name = item;
     li.appendChild(checkbox);
+    li.onclick = updateProgressBar(Tdata, "Tbar");
 
     // Create the label
     const label = document.createElement("label");
-    label.htmlFor = item;
+    label.htmlFor = "t" + item;
     label.textContent = item;
     li.appendChild(label);
 
@@ -68,7 +70,7 @@ function openMap(evt, MapName) {
    
 
   
-  let CdMdata = ["XM4", "AK-47", "AMES", "GPR91", "Model L", "Goblin MK2", "AS VAL", "Krig", "C9", "KSV", "Tanto .22", "PP-919", "Jakal", "Kompakt", "Saug", "Siren", "Marine", "ASG 89", "PU-21", "XMG", "GPMG", "LW3A1 Frostline", "SVD", "LR 7.62", "9mm PM", "GS45", "Stryder", "Grekhova", "HE-1", "Cigma", "Ray Gun", "Mutant Injection", "Chopper gunner", "ARC-XD", "Hellstorm", "Combat knife", "Bat", "Power drill"]
+  let CdMdata = ["AEK", "Swat 5.56", "Tsarkov", "DM-10", "XM4", "AK-47", "AMES", "GPR91", "Model L", "Goblin MK2", "AS VAL", "Krig", "C9", "KSV", "Tanto .22", "PP-919", "Jakal", "Kompakt", "Saug", "Siren", "Marine", "ASG 89", "PU-21", "XMG", "GPMG", "LW3A1 Frostline", "SVD", "LR 7.62", "9mm PM", "GS45", "Stryder", "Grekhova", "HE-1", "Cigma", "Ray Gun", "Mutant Injection", "Chopper gunner", "ARC-XD", "Hellstorm", "Combat knife", "Bat", "Power drill"]
   let List3 = document.getElementById("CdMList")
 
   CdMdata.forEach((item) => {
@@ -76,13 +78,14 @@ function openMap(evt, MapName) {
 
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
-    checkbox.id = item;
+    checkbox.id = "c" + item;
     checkbox.name = item;
     li.appendChild(checkbox);
+    li.onclick = updateProgressBar(CdMdata, "CdMbar");
 
     // Create the label
     const label = document.createElement("label");
-    label.htmlFor = item;
+    label.htmlFor = "c" + item;
     label.textContent = item;
     li.appendChild(label);
 
@@ -90,24 +93,21 @@ function openMap(evt, MapName) {
 });
 
 function updateProgressBar(string, progressBarId) {
-    const progressBar = document.getElementById(progressBarId);
-    const totalItems = string.length;
-    let completedItems = 0;
-  
-    function processItem() {
-      if (completedItems < totalItems) {
-        // Simulate processing an item (replace with your actual logic)
-        setTimeout(() => {
-          completedItems++;
-          const progress = (completedItems / totalItems) * 100;
-          progressBar.style.width = progress + "%";
-  
-          processItem(); // Process the next item
-        });
-      }
+  //let progressBar = document.getElementById(progressBarId);
+  let totalItems = String.length;
+  let completedItems = 0;
+
+  function processItem() {
+    if (completedItems < totalItems) {
+      // Simulate processing an item (replace with your actual logic)
+      setTimeout(() => {
+        completedItems++;
+        let progress = (completedItems / totalItems) * 100;
+        document.getElementById(progressBarId).value = progress;
+        processItem(); // Process the next item
+      });
     }
-  
-    processItem(); // Start processing the first item
   }
 
-updateProgressBar()
+  processItem(); // Start processing the first item
+}
